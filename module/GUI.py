@@ -3,7 +3,7 @@
 NAME = "GUI"
 
 class Gui:
-
+    border = 0
     inp_ok = False
 
     def __init__(self, mod = 0):
@@ -35,11 +35,12 @@ class Gui:
                 return
 
 
-    @staticmethod
-    def border_master(n):
+    def border_master(self, n):
         border = input(f"Введите размер первой группы,\nили нажмите entr чтобы ввести значение по умолчанию({n // 2}); максимум({n}):")
         if border == '':
+            self.border = n // 2
             return n // 2
+        self.border = n // 2
         return int(border)
 
     @staticmethod
